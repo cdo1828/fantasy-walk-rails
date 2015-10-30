@@ -22,8 +22,8 @@ $mordor: #393834;
 /************* ORIENTATION ************/
 
 .pull-right {
-	float:right;
-	padding-right: 1%
+	float: right;
+	padding-right: 5%;
 }
 
 .centerize {
@@ -52,6 +52,10 @@ $mordor: #393834;
 			margin: 1px 1px;
 			color: lighten($ranger, 15%);
 			box-shadow: none;
+		}
+
+		&:focus{
+			outline: none;
 		}
 	}
 }
@@ -236,7 +240,9 @@ input:-webkit-autofill {
 #navigation ul {
 	list-style-type: none;
 	margin: 0;
-	padding: 0;
+	padding: 2px;
+	padding-left: 5px;
+	background-color: $gondor;
 }
 
 #navigation ul li {

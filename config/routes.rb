@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   get 'auth/fitbit/callback' => 'fitbit_auth/get_response'
 
+  get 'dashboards/index' 
+
   #sessions#new
  
 
