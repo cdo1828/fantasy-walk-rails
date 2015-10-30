@@ -29,8 +29,9 @@
 			<button type='submit'>Embark</button>
 
 		</form> -->
+
 	
-		<%= form_for @user, :url => '/users/create' do |f| %>
+		<%= form_for :user, :url => '/users/create' do |f| %>
 		<div class="row">
 				<%= f.label :email, required:false %>
 				<%= f.text_field :email, required:false, :class => 'heroic_input' %>
@@ -46,6 +47,7 @@
 			</div>
 				<%= f.button :Embark %>
 		<!-- </div> -->
+
 		<% end %>
 	</div>
 </div>

@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 			session[:user_id] = @user.id
 			
       # redirect_to 'auth/fitbit'
-			redirect_to 'lands/rivendell'
+			redirect_to '/lands/rivendell'
 		else
 			flash[:errors] = @user.errors.full_messages
 			redirect_to '/register'
@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   end
 
   def register
-  	@user = User.new
+  	
   end
 
   def login
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-  	params.require(:user).permit(:email, :password, :password_confirm)
+  	params.require(:user).permit(:email, :password)
   end
 
 end
