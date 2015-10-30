@@ -1,31 +1,33 @@
 <!DOCTYPE html>
 
 <div class="centerize">
-<div class="row">
-	
-</div>
 
 	<div class="row">
-		<p>
-			<% if @errors %>
-				<% @errors.each do |error| %>
-				<div class="errors">errors</div>
-				<% end %>
+		
+			<% if flash["errors"] %>
+		<% flash["errors"].each do |error_message| %> <br>
+		 	<div class="errors"><%= error_message %></div>
 			<% end %>
-			<label for="email">Email</label>
-			<input class="heroic_input" name='email'>
-		</p>
+		<% end %>
 	</div>
 
 	<div class="row">
-		<div class="col-3">
-			<label for="password">Password</label>
-			<input class="less heroic_input" type="password" name='password' on="key-press">
-		</div>
-		<div class="col-3">
-			<label for="password_confirmation" >Confirm</label>
-			<input class='less heroic_input' type="password" on="key-press">
-		</div>
-		<button action='register' type='submit'>Embark</button>
+		<form method="post" action="users/create">
+			<label for="email">Email</label>
+			<input class="heroic_input" name='email'>
+		
+			<div class="col-3">
+				<label for="password">Password</label>
+				<input class="less heroic_input" type="password" name='password' on="key-press">
+			</div>
+
+			<div class="col-3">
+				<label for="password_confirmation">Confirm</label>
+				<input class='less heroic_input' type="password" on="key-press">
+			</div>
+
+			<button type='submit'>Embark</button>
+
+		</form>
 	</div>
 </div>

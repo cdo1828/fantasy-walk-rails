@@ -1,2 +1,25 @@
-<h1>Users#login</h1>
-<p>Find me in app/views/users/login.html.erb</p>
+<!DOCTYPE html>
+
+<div class="centerize">
+
+	<div class="row">
+		<p>
+			<% if @errors %>
+				<% @errors.each do |error| %>
+				<div class="errors">errors</div>
+				<% end %>
+			<% end %>
+			<label for="email">Email</label>
+			<input class="heroic_input" name='email'>
+		</p>
+	</div>
+
+<!-- <h1 class="title_text">Log In</h1> -->
+	
+	<div class="row">
+		<form method="post" action="users/create">
+		<div class="col-3">
+			<label for="password">Password</label>
+			<input class="less heroic_input" type="password" name='password' on="key-press">
+		</div>
+</div>
