@@ -3,6 +3,12 @@
 
 <h3>Days since leaving the shire: <%= @distance["activities-tracker-distance"].count %> </h3>
 
+<% @sum = 0 %>
+<% @distance["activities-tracker-distance"].each do |p| %>
+<% @sum += p["value"].to_f %>
+<% end %>
+<h3>Total Distance Travelled: <%= @sum.round(2) %>  </h3>
+
 <table>
 	<thead>
 		<th>Day</th>
