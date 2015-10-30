@@ -1,7 +1,5 @@
 class FitbitAuthController < ApplicationController
 	
-  
-
   def get_response
     # Callback from Fitbit Oauth
 
@@ -18,9 +16,9 @@ class FitbitAuthController < ApplicationController
     total_distance = get_user_distance(@fitbit_data)
     
     @distance = total_distance
+    puts "HERE IS THE DISTANCE:", @distance
     @fitbit_data[:token] = oauth_token = params[:oauth_token]
     @fitbit_data[:verifier] = oauth_token = params[:oauth_verifier]
-
     
     # render json:activities
     # render json:user
