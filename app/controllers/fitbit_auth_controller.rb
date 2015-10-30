@@ -28,7 +28,7 @@ class FitbitAuthController < ApplicationController
     # render json:activities
     # render json:user
     # render json:fitbit_data
-    render json:@distance
+    # render json:@distance
     # redirect_to '/dashboards/index'
 
     # session[:fitbit] = @fitbit_data
