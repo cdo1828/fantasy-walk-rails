@@ -13,7 +13,7 @@ class FitbitAuthController < ApplicationController
     @fitbit_data  = request.env['omniauth.auth']
 
     user = User.find(session[:user_id])
-    user.update(fitbit_uid:@fitbit_data["uid"], fitbit_token:@fitbit_data["credentials"]["token"], fitbit_secret:@fitbit_data["credentials"]["secret"])
+    user.update(full_name:@fitbit_data["info"]["display_name"], fitbit_uid:@fitbit_data["uid"], fitbit_token:@fitbit_data["credentials"]["token"], fitbit_secret:@fitbit_data["credentials"]["secret"])
     # Get User Activity Information
     # activities = get_user_activities(fitbit_data)
     # user = get_user_info(fitbit_data)
@@ -23,12 +23,12 @@ class FitbitAuthController < ApplicationController
     @fitbit_data[:token] = oauth_token = params[:oauth_token]
     @fitbit_data[:verifier] = oauth_token = params[:oauth_verifier]
 
-    
+    # session[:fitbit] = @fitbit_data
     # render json:activities
     # render json:user
-    # render json:fitbit_data
-    # render json:@distance
-    redirect_to '/dashboards/index'
+    # render json:@fitbit_data
+    # render json:@fitbit_data
+    render '/dashboards/index'
   end
 
 private

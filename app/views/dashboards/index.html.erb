@@ -1,3 +1,17 @@
 <h2>To be populated with fitbit data</h2>
 
-<%= session[:user_id] %>
+<%= @fitbit_data["provider"] %>
+
+
+<table>
+	<thead>
+		<th>Day</th>
+		<th>Distance Travelled</th>
+	</thead>
+		<% @distance["activities-tracker-distance"].each do |p| %>
+	<tr>
+		<td> <%= p["dateTime"] %> </td>
+		<td> <%= p["value"] %> </td>
+	</tr>
+		<% end %>
+</table>
