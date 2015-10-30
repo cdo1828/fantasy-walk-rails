@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   end
 
   def register
-  	@user = User.new
+  	
   end
 
   def login

@@ -30,16 +30,16 @@
 
 		</form> -->
 
-		<%= form_for @user, :url => '/users/create' do |f| %>
+		<% form_tag(register_path, :method => "post") do %>
 			<div class="less heroic_input">
-				<%= f.label :email, required:false %>
-				<%= f.text_field :email, required:false, :class => 'less heroic_input' %>
+				<%= label_tag(:email, "Email") %>
+				<%= text_field_tag(:email, :class => 'less heroic_input') %>
 			</div>
 			<div class="less heroic_input">
-				<%= f.label :password, required:false %>
-				<%= f.password_field :password, required:false, :class => 'less heroic_input' %>
+				<%= label :password, required:false %>
+				<%= password_field :password, required:false, :class => 'less heroic_input' %>
 			</div>
-				<%= f.button :Embark %>
+				<%= button_tag(:embark) %>
 			
 		<% end %>
 		<br>
