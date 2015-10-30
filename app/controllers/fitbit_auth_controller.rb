@@ -10,16 +10,22 @@ class FitbitAuthController < ApplicationController
     oauth_verifier = params[:oauth_verifier]
 
     # User Information and User Access Credentials
-    fitbit_data  = request.env['omniauth.auth']
+    @fitbit_data  = request.env['omniauth.auth']
 
     # Get User Activity Information
     # activities = get_user_activities(fitbit_data)
     # user = get_user_info(fitbit_data)
-    total_distance = get_user_distance(fitbit_data)
+    total_distance = get_user_distance(@fitbit_data)
+    
+    @distance = total_distance
+    @fitbit_data[:token] = oauth_token = params[:oauth_token]
+    @fitbit_data[:verifier] = oauth_token = params[:oauth_verifier]
+
     
     # render json:activities
     # render json:user
-    render json:fitbit_data
+    # render json:fitbit_data
+    redirect_to '/dashboards/index'
   end
 
 private

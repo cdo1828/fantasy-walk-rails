@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 			session[:user_id] = @user.id
 			
       # redirect_to 'auth/fitbit'
-			redirect_to '/lands/rivendell'
+			redirect_to '/auth/fitbit'
 		else
 			flash[:errors] = @user.errors.full_messages
 			redirect_to '/register'

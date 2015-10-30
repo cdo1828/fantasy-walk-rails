@@ -14,9 +14,9 @@ Rails.application.routes.draw do
 
   get 'users/login'
 
-  get 'auth/fitbit'
+  post 'auth/fitbit'
 
-  get 'auth/fitbit/callback' => 'fitbit_auth/get_response'
+  get 'auth/fitbit/callback' => 'fitbit_auth#get_response'
 
   get 'dashboards/index' 
 
