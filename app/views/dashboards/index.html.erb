@@ -1,7 +1,7 @@
 <h2>To be populated with fitbit data</h2>
 
-<%= @fitbit_data["provider"] %>
 
+<h3>Days since leaving the shire: <%= @distance["activities-tracker-distance"].count %> </h3>
 
 <table>
 	<thead>
@@ -11,7 +11,7 @@
 		<% @distance["activities-tracker-distance"].each do |p| %>
 	<tr>
 		<td> <%= p["dateTime"] %> </td>
-		<td> <%= p["value"] %> </td>
+		<td> <%= p["value"].to_f.round(2)%> </td>
 	</tr>
 		<% end %>
 </table>
