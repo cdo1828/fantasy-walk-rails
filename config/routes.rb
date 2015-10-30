@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  
+  root 'lands#rivendell'
+
   get 'sessions/create'
 
   get 'sessions/destroy'
