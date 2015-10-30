@@ -31,7 +31,7 @@
 		</form> -->
 
 	
-		<%= form_for @user, :url => '/users/create' do |f| %>
+		<%= form_for :user, :url => '/users/create' do |f| %>
 		<div class="row">
 				<%= f.label :email, required:false %>
 				<%= f.text_field :email, required:false, :class => 'heroic_input' %>
@@ -43,7 +43,7 @@
 			</div>
 			<div class="col-3">
 				<%= f.label :password_confirm %>
-				<%= f.password_field :password_confirm, :class => 'less heroic_input' %>
+				<%= f.password_field :password_confirmation, :class => 'less heroic_input' %>
 			</div>
 				<%= f.button :Embark %>
 		<!-- </div> -->
