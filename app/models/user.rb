@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
 
     
     validates :email, presence:true, format: { with: email_regex }, uniqueness: { case_sensitive: false }
-    validates :password, presence:true, length: { minimum: 6 }
+    validates :password, confirmation: true, presence:true, length: { minimum: 6 }
     
 
     def has_password?(submitted_password)

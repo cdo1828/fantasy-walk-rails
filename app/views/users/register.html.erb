@@ -12,7 +12,7 @@
 	</div>
 
 	<div class="row">
-		<form method="post" action="users/create">
+		<!-- <form method="post" action="users/create">
 			<label for="email">Email</label>
 			<input class="heroic_input" name='email'>
 		
@@ -28,6 +28,21 @@
 
 			<button type='submit'>Embark</button>
 
-		</form>
+		</form> -->
+
+		<%= form_for @user, :url => '/users/create' do |f| %>
+			<div class="less heroic_input">
+				<%= f.label :email, required:false %>
+				<%= f.text_field :email, required:false, :class => 'less heroic_input' %>
+			</div>
+			<div class="less heroic_input">
+				<%= f.label :password, required:false %>
+				<%= f.password_field :password, required:false, :class => 'less heroic_input' %>
+			</div>
+				<%= f.button :Embark %>
+			
+		<% end %>
+		<br>
+		<%= link_to "Haven't started your journey yet?", 'users/login' %>
 	</div>
 </div>

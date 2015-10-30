@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-	skip_before_filter :verify_authenticity_token
+	
   def create
-  	@user = User.new(email:params[:email], password:params[:password])
+  	@user = User.new(user_params)
 		if @user.save
 			session[:user_id] = @user.id
 			
@@ -13,10 +13,15 @@ class UsersController < ApplicationController
   end
 
   def register
-  	
+  	@user = User.new
   end
 
   def login
+
+  end
+
+  def user_params
+  	params.require(:user).permit(:user_email, :user_password)
   end
 
 end
