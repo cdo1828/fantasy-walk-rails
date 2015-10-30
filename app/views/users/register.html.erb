@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<div id="frodo" style="margin:auto; margin-top:15px"></div>
 
 <div class="centerize">
 
@@ -10,26 +11,6 @@
 			<% end %>
 		<% end %>
 	</div>
-
-	<!-- <div class="row"> -->
-		<!-- <form method="post" action="users/create">
-			<label for="email">Email</label>
-			<input class="heroic_input" name='email'>
-		
-			<div class="col-3">
-				<label for="password">Password</label>
-				<input class="less heroic_input" type="password" name='password' on="key-press">
-			</div>
-
-			<div class="col-3">
-				<label for="password_confirmation">Confirm</label>
-				<input class='less heroic_input' type="password" on="key-press">
-			</div>
-
-			<button type='submit'>Embark</button>
-
-		</form> -->
-
 	
 		<%= form_for :user, :url => '/users/create' do |f| %>
 		<div class="row">

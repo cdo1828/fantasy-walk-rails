@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 
-<div class="centerize">
 
+
+<div id="frodo" style="margin:auto; margin-top:15px"></div>
+<div class="centerize">
 	<div class="row">
 		<p>
 			<% if flash["error"] %>
@@ -10,17 +12,14 @@
 		</p>
 	</div>
 
-<!-- <h1 class="title_text">Log In</h1> -->
 	
-	<!-- <div class="row"> -->
 	<%= form_for :user, :url => '/sessions/create' do |f| %>
 		<%= f.label :email %>
 		<%= f.text_field :email, required:true, :class => 'heroic_input' %>
-	<!-- </div>		 -->
-	<!-- <div class="row"> -->
+
 		<%= f.label :password %>
 		<%= f.password_field :password, required:true, :class => 'heroic_input' %>
-	<!-- </div> -->
+
 		<%= f.button :Embark %>	
 			
 	<% end %>

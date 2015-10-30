@@ -116,6 +116,20 @@ img:last-of-type {
   transform: translateZ(.4px) scale(.6) translateX(-104%) translateY(-40%) rotate(-5deg);
 }
 
+#frodo{
+	position: default;
+	top: default;
+	left: default;
+  transform: none;
+  padding: 10px;
+  height: 185px;
+  width: 500px;
+  border-radius: 20px;
+  background-image: url("frodo-fitbit.png");
+  box-shadow: none;
+}
+
+
 .slide:before {
   content: "";
   position: absolute;
