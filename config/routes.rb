@@ -8,9 +8,9 @@ Rails.application.routes.draw do
 
   get 'sessions/destroy'
 
-  get 'users/create'
+  post 'users/create' => 'users#create'
 
-  get 'users/register' => 'users#register'
+  get 'register' => 'users#register'
 
   get 'users/login'
 
