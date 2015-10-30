@@ -4,35 +4,23 @@
 
 	<div class="row">
 		<p>
-			<% if @errors %>
-				<% @errors.each do |error| %>
-				<div class="errors">errors</div>
-				<% end %>
+			<% if flash["error"] %>
+	 			<div class="errors"><%= flash["error"] %></div>
 			<% end %>
 		</p>
 	</div>
 
 <!-- <h1 class="title_text">Log In</h1> -->
 	
-	<div class="row">
-		<!-- <form method="post" action="users/create">
-		<div class="col-3">
-			<label for="password">Password</label>
-			<input class="less heroic_input" type="password" name='password' on="key-press">
-		</div> -->
-
-		<%= form_for :session, :url => '/sessions/create' do |f| %>
-			<div class="less heroic_input">
-				<%= f.label :email, required:false %>
-				<%= f.text_field :email, required:true, :class => 'less heroic_input' %>
-			</div>
-			<div class="less heroic_input">
-				<%= f.label :password, required:false %>
-				<%= f.password_field :password, required:true, :class => 'less heroic_input' %>
-			</div>
-				<%= f.button :Embark %>
+	<!-- <div class="row"> -->
+	<%= form_for :user, :url => '/sessions/create' do |f| %>
+		<%= f.label :email %>
+		<%= f.text_field :email, required:true, :class => 'heroic_input' %>
+	<!-- </div>		 -->
+	<!-- <div class="row"> -->
+		<%= f.label :password %>
+		<%= f.password_field :password, required:true, :class => 'heroic_input' %>
+	<!-- </div> -->
+		<%= f.button :Embark %>	
 			
-		<% end %>
-
-</div>
-		<%= link_to 'Not a member?', '/register' %>
+	<% end %>

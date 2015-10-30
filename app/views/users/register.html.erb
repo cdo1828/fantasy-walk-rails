@@ -11,7 +11,7 @@
 		<% end %>
 	</div>
 
-	<div class="row">
+	<!-- <div class="row"> -->
 		<!-- <form method="post" action="users/create">
 			<label for="email">Email</label>
 			<input class="heroic_input" name='email'>
@@ -30,19 +30,24 @@
 
 		</form> -->
 
-		<% form_tag(register_path, :method => "post") do %>
-			<div class="less heroic_input">
-				<%= label_tag(:email, "Email") %>
-				<%= text_field_tag(:email, :class => 'less heroic_input') %>
+	
+		<%= form_for @user, :url => '/users/create' do |f| %>
+		<div class="row">
+				<%= f.label :email, required:false %>
+				<%= f.text_field :email, required:false, :class => 'heroic_input' %>
+		</div>
+		<div class="row">
+			<div class="col-3">
+				<%= f.label :password %>
+				<%= f.password_field :password, :class => 'less heroic_input' %>
 			</div>
-			<div class="less heroic_input">
-				<%= label :password, required:false %>
-				<%= password_field :password, required:false, :class => 'less heroic_input' %>
+			<div class="col-3">
+				<%= f.label :password_confirm %>
+				<%= f.password_field :password_confirm, :class => 'less heroic_input' %>
 			</div>
-				<%= button_tag(:embark) %>
-			
+				<%= f.button :Embark %>
+		<!-- </div> -->
+
 		<% end %>
-		<br>
-		<%= link_to "Haven't started your journey yet?", 'users/login' %>
 	</div>
 </div>

@@ -1,5 +1,8 @@
 class FitbitAuthController < ApplicationController
-	def get_response
+	
+  
+
+  def get_response
     # Callback from Fitbit Oauth
 
     # Oauth Access Credentials

@@ -1,14 +1,25 @@
 Rails.application.routes.draw do
+  
+  root 'users#register'
 
-  get 'sessions/create'
+  get 'lands/rivendell' => 'lands#rivendell'
 
-  get 'sessions/destroy'
+  post 'sessions/create' => 'sessions#create'
+
+  get 'sessions/destroy' => 'sessions#destroy'
 
   post 'users/create' => 'users#create'
 
   get 'register' => 'users#register'
 
   get 'users/login'
+
+  get 'auth/fitbit'
+
+  get 'auth/fitbit/callback' => 'fitbit_auth/get_response'
+
+  #sessions#new
+ 
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

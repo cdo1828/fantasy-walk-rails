@@ -7,7 +7,22 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<nav id = "navigation">
+	<ul>
+		<li>
+			<a href="/users/login">login</a> |
+		</li>
+		<li>
+			<a href="/lands/rivendell">Rivendell</a> |
+		</li>
+		<li>
+			<a href="/register">register</a> |
+		</li>
+		<li>
+			<a href="/sessions/destroy">logout</a> |
+		</li>
+	</ul>
+</nav>
 <%= yield %>
 
 </body>
