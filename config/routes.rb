@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   
-  root 'lands#rivendell'
+  root 'users#login'
+
+  get 'lands/rivendell' => 'lands#rivendell'
 
   get 'sessions/create'
 
