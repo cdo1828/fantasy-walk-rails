@@ -1,0 +1,231 @@
+$gondor: #e0ddd6;
+$anduin: #708ea2;
+$noldor: #505c67;
+$saddle: #874d28;
+$ranger: #5d5933;
+$mordor: #393834;
+
+@font-face{
+	font-family: 'title';
+	src: url('fonts/RINGM___.ttf');
+}
+
+@font-face{
+	font-family: 'aniron';
+	src: url('fonts/anirb___.ttf');
+}
+
+.errors {
+	background-color: red;
+}
+
+#navigation ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+/************* ORIENTATION ************/
+
+.pull-right {
+	float:right;
+	padding-right: 1%
+}
+
+.centerize {
+	width: 45%;
+	margin: auto;
+	margin-top: 10%;
+	button{
+		padding: 10px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		background-color: lighten($gondor, 10%);
+		color: lighten($ranger, 25%);
+		border: none;
+		border-radius: 5px;
+		border-top-left-radius: 25px;
+		border-top-right-radius: 25px;
+		font-size: 18px;
+		font-family: 'title', monospace;
+		// color: white;
+		// font-weight: bold;
+		width: 100%;
+		box-shadow: 1px 1px 1px;
+		
+		&:hover{
+			// background-color: lighten($gondor, 5%);
+			margin: 1px 1px;
+			color: lighten($ranger, 15%);
+			box-shadow: none;
+		}
+	}
+}
+
+/*****************   FORMS   *****************/
+
+label {
+	font-family: 'aniron';
+	font-size: 12px;
+	display: block;
+	width: 25%;
+	padding-right:10px;
+	margin: auto;
+	text-align: center;
+}
+
+.heroic_input {
+	margin: auto;
+	margin-bottom: 20px;
+	width: 100%;
+	display: inline-block;
+	border: none;
+	border-bottom: 1px solid $gondor;
+	height: 50px;
+	// appearance: none;
+	// box-shadow: none;
+	outline: none;
+	border-radius: 10px;
+	padding: 10px;
+	font-family: 'aniron';
+	font-size: 22px;
+	left: 50%;
+	&:focus{
+		border-bottom: 1px solid lighten($ranger, 15%);
+		outline: none;
+	}
+	&:hover{
+		border-bottom: 1px solid lighten($ranger, 25%);
+	}
+	.col-3{
+		border-radius: none;
+	}
+}
+
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px white inset;
+}
+
+.errors{
+	background-color: salmon;
+	color: scarlet;
+	border: 1px solid pink;
+	border-radius: 5px;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+/*************     NAVIGATION     *************/
+
+#navigation ul li {
+	display: inline-block;
+	a {
+		text-decoration: none;
+		font-family: 'aniron';
+		font-size: 12px;
+		color: $mordor;
+	}
+	button {
+		background: none;
+		border: none;
+		font-family: 'title';
+		font-size: 14px
+	}
+}
+
+
+/************* FONT AND COLORS ************/
+
+/*@mixin darken($baseColor){
+	background-color: $baseColor
+	&:hover
+		background-color: darken($baseColor, 5%)
+}*/
+
+.title_text {
+	font-family: 'title', sans-serif;
+}
+
+.gondor {
+	background-color: $gondor;
+	color: $noldor;
+}
+
+.anduin {
+	background-color: $anduin;
+	color: white;
+}
+
+.noldor {
+	background-color: $noldor;
+	color: white;
+}
+
+.saddle {
+	background-color: $saddle;
+	color: white;
+}
+
+.ranger {
+	background-color: $ranger;
+	color: white;
+}
+
+.mordor {
+	background-color: $mordor;
+	color: white;
+}
+
+/*************   COLOR BLOCKS   *************/
+
+body{
+	background-color: white;
+}
+
+/*************   GRID SYSTEM    *************/
+
+.grid-container{
+    width: 100%; 
+    /*max-width: 1200px;      */
+}
+
+
+/*clearfix hack*/
+.row:before, 
+.row:after {
+    content:"";
+    display: table ;
+    clear:both;
+}
+
+[class*='col-'] {
+    float: left; 
+    min-height: 1px; 
+    width: 16.66%; 
+    padding: 1%;     
+}
+
+.col-1{ width: 14.666%; }
+.col-2{ width: 31.33%; }
+.col-3{ width: 48%;    }
+.col-4{ width: 64.66%; }
+.col-5{ width: 81.33%; }
+.col-6{ width: 98%;   }
+
+
+.row:hover > .overlay {
+    width:100%;
+    height:100%;
+    position:absolute;
+    background-color:#000;
+    opacity:0.5;
+    border-radius:30px;
+}
+
+[class*='col-'] > p {
+ padding: 0;
+ margin: 0;
+ text-align: center; 
+ /*color: white; */
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<div class="centerize">
+<div class="row">
+	
+</div>
+
+	<div class="row">
+		<p>
+			<% if @errors %>
+				<% @errors.each do |error| %>
+				<div class="errors">errors</div>
+				<% end %>
+			<% end %>
+			<label for="email">Email</label>
+			<input class="heroic_input" name='email'>
+		</p>
+	</div>
+
+	<div class="row">
+		<div class="col-3">
+			<label for="password">Password</label>
+			<input class="less heroic_input" type="password" name='password' on="key-press">
+		</div>
+		<div class="col-3">
+			<label for="password_confirmation" >Confirm</label>
+			<input class='less heroic_input' type="password" on="key-press">
+		</div>
+		<button action='register' type='submit'>Embark</button>
+	</div>
+</div>
