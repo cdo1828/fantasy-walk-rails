@@ -1,13 +1,14 @@
 
-<h3>Days since leaving the shire: <%= @distance["activities-tracker-distance"].count %> </h3>
+<h3 class='aniron'>Days since leaving the shire: <%= @distance["activities-tracker-distance"].count %> </h3>
 
 <% @sum = 0 %>
 <% @distance["activities-tracker-distance"].each do |p| %>
 <% @sum += p["value"].to_f %>
 <% end %>
-<h3>Total Distance Travelled: <%= @sum.round(2) %>  </h3>
+<h3 class='aniron'>Total Distance Travelled: <%= @sum.round(2) %>  </h3>
 
-<table>
+
+<table class="gondor title_text">
 	<thead>
 		<th>Day</th>
 		<th>Distance Travelled</th>
@@ -19,3 +20,5 @@
 	</tr>
 		<% end %>
 </table>
+
+<p class='aniron'>Last checkpoint: </p><a class='aniron' href="/lands/rivendell">Rivendell</a>

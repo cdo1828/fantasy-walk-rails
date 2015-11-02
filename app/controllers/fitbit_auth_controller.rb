@@ -24,7 +24,7 @@ class FitbitAuthController < ApplicationController
     @fitbit_data[:token] = oauth_token = params[:oauth_token]
     @fitbit_data[:verifier] = oauth_token = params[:oauth_verifier]
     
-    session[:distance] = @distance
+    # session[:distance] = @distance
     # render json:activities
     # render json:user
     # render json:fitbit_data
