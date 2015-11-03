@@ -1,28 +1,21 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+-- pitch --
 
-Things you may want to cover:
+Need a little more fantasy in your life? 
+Turn that morning tromp to the bus into something more... epic.
 
-* Ruby version
+With fantasy-walks.
 
-* System dependencies
+Our website app allows you to finally track your steps in the real world against your favorite fantasy journey, Lord of the Rings. Do you walk enough in your daily life to bear the Ring's burden unto the fires of Mount Doom, or are the orks going to gobble you before you make it? Perhaps it's time to step it up, maybe even to Uruk'hai pace?
 
-* Configuration
+Standing atop weathertop you can see who else has passed the same way as you and when. With full parallax effect you can immerse yourself in images complete with lore passages from the areas that you are currently traverseing. Not everyone has read the whole series, and even fewer have tapped into Tolkein's other rich works.
 
-* Database creation
+--- specifics ---
 
-* Database initialization
+The website was built in rails with a postgresql database and custom sass styling. During registration you will be redirected to log in with your fitbit information. From then on, we will securely store your information for API retrieval upon login.
 
-* How to run the test suite
+The site uses JQuery cookie for session persistence and Bcrypt for password security.
 
-* Services (job queues, cache servers, search engines, etc.)
+We hope you enjoy!
 
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
