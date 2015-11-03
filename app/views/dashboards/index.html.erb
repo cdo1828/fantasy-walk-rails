@@ -1,8 +1,12 @@
+<div class="centerize">
 
-<h3 class='aniron'>Days since leaving the shire: <%= @distance["activities-tracker-distance"].count %> </h3>
+<% if flash.notice %>
+	<p class='notice'> <%= flash.notice %> </p>
+<% end %>
 
+<h3 class='aniron'>Days since leaving the shire: <%= @distance[1]["activities-tracker-distance"].count %> </h3>
 <% @sum = 0 %>
-<% @distance["activities-tracker-distance"].each do |p| %>
+<% @distance[1]["activities-tracker-distance"].each do |p| %>
 <% @sum += p["value"].to_f %>
 <% end %>
 <h3 class='aniron'>Total Distance Travelled: <%= @sum.round(2) %>  </h3>
@@ -11,14 +15,27 @@
 <table class="gondor title_text">
 	<thead>
 		<th>Day</th>
-		<th>Distance Travelled</th>
+		<th>Steps</th>
+		<th>Distance <br> Travelled</th>
+		<th>Elevation <br> Gained</th>
+		<th>Calories <br> Burnt</th>
+		<th>Minutes <br> Asleep</th>
 	</thead>
-		<% @distance["activities-tracker-distance"].each do |p| %>
+		<% count = 0 %>
+		<% @distance[0]["activities-tracker-steps"].each do |p| %>
 	<tr>
 		<td> <%= p["dateTime"] %> </td>
-		<td> <%= p["value"].to_f.round(2)%> </td>
+		<td> <%= p["value"]%> </td>
+		<td> <%= @distance[1]["activities-tracker-distance"][count]["value"].to_f.round(2)%> </td>
+		<td> <%= @distance[2]["activities-tracker-elevation"][count]["value"] %> </td>
+		<td> <%= @distance[3]["activities-tracker-calories"][count]["value"] %> </td>
+		<td> <%= @distance[4]["sleep-minutesAsleep"][count]["value"] %> </td>
+		<% count+=1 %>
 	</tr>
 		<% end %>
+		
 </table>
 
-<p class='aniron'>Last checkpoint: </p><a class='aniron' href="/lands/rivendell">Rivendell</a>
+<p class='aniron'>Last checkpoint: <a class='aniron' href="/lands/rivendell">Rivendell</a></p>
+
+</div>

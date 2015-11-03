@@ -10,6 +10,11 @@
 		 	<div class="errors"><%= error_message %></div>
 			<% end %>
 		<% end %>
+
+			<% if flash.notice %>
+				<p class='notice'> <%= flash.notice %> </p>
+			<% end %>
+
 	</div>
 	
 		<%= form_for :user, :url => '/users/create' do |f| %>

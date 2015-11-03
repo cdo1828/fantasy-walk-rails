@@ -4,10 +4,13 @@ $noldor: #505c67;
 $saddle: #874d28;
 $ranger: #5d5933;
 $mordor: #393834;
+$ranger_green: #6d8a72;
 
-table td {
-	padding: 5px;
-	padding-left: 10px;
+td {
+	text-align: center;
+}
+table {
+	margin: 0 auto;
 }
 
 
@@ -25,6 +28,12 @@ table td {
 	background-color: red;
 }
 
+.notice {
+	font-family: 'aniron', sans-serif;
+	color: $ranger_green;
+	text-align: center;
+}
+
 /************* ORIENTATION ************/
 
 .pull-right {
@@ -35,7 +44,7 @@ table td {
 .centerize {
 	width: 45%;
 	margin: auto;
-	margin-top: 10%;
+	margin-top: 3.5%;
 	button{
 		padding: 10px;
 		padding-top: 5px;
@@ -296,6 +305,7 @@ input:-webkit-autofill {
 
 .aniron {
 	font-family: 'aniron', sans-serif;
+	text-align: center;
 }
 
 .gondor {

@@ -12,7 +12,10 @@ class SessionsController < ApplicationController
         @fitbit_data = User.find(session[:user_id])
         total_distance = get_user_distance(@fitbit_data)
         @distance = total_distance
-  	    render "/dashboards/index", :notice => "Logged in!"
+        # render json:@distance
+        # puts @distance
+        flash[:notice] = "Logged in!"
+  	    render "/dashboards/index"
 
   	  else
   	    redirect_to "/auth/fitbit"
@@ -25,7 +28,8 @@ class SessionsController < ApplicationController
 
   def destroy
   session[:user_id] = nil
-  redirect_to root_url, :notice => "Logged out!"
+  flash[:notice] = "Logged out!"
+  redirect_to root_url 
 end
 
 
@@ -54,6 +58,15 @@ def get_user_distance(fitbit_data)
         ##get date they started their journey
         # start_date = fitbit_data['created_at']
 
-    client.data_by_time_range('/activities/tracker/distance',{:base_date => '2015-10-21', :end_date => 'today'})
+    client = [
+      client.data_by_time_range('/activities/tracker/steps',{:base_date => '2015-10-21', :end_date => 'today'}),
+      client.data_by_time_range('/activities/tracker/distance',{:base_date => '2015-10-21', :end_date => 'today'}),
+      client.data_by_time_range('/activities/tracker/elevation',{:base_date => '2015-10-21', :end_date => 'today'}),
+      client.data_by_time_range('/activities/tracker/calories',{:base_date => '2015-10-21', :end_date => 'today'}),
+      client.data_by_time_range('/sleep/minutesAsleep',{:base_date => '2015-10-21', :end_date => 'today'})
+    ]
+
+    client
+
   end
 end
